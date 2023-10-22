@@ -3,12 +3,12 @@ import "./SubLists.css";
 
 function SubLists() {
   return (
-    <ul class="list-group list-group-flush">
-  <li class="list-group-item">
-  <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
+    <ul className="list-group list-group-flush">
+  <li className="list-group-item">
+  <input className="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
     An item</li>
-    <li class="list-group-item">
-  <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
+    <li className="list-group-item">
+  <input className="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
     An item</li>
 </ul>
   )
