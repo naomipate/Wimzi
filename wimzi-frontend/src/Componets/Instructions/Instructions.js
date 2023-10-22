@@ -4,7 +4,7 @@ import "./Instructions.css";
 function Instructions() {
   return (
 
-        <div className="card border-info mb-3" 
+        <div className="card card-instructions border-info mb-3" 
         // style={{maxWidth: "18rem"}}
         >
     <div className="card-header">Instructions</div>
