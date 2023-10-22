@@ -4,31 +4,26 @@ import "./Lists.css";
 function Lists() {
   return (
     <div className='list-container'>
-    <ul className="list-group">
-    {/* <li className="list-group-item d-flex justify-content-between align-items-center">
-        <button className="list-group-item d-flex justify-content-between align-items-center">
-        Add
-        </button>
-  </li> */}
-  <button className="list-group-item d-flex justify-content-between align-items-center list-group-item-info">
-        Add New Reminder
-        </button>
-  <li className="list-group-item d-flex justify-content-between align-items-center">
-    A list item
-    <span className="badge bg-info  rounded-pill">14</span>
+            <form className='input-submit'>
+  <div className="mb-3">
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+  <button type="submit" className="btn btn-info">+</button>
+</form>
+<ul className="list-group">
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="firstCheckboxStretched">First checkbox</label>
   </li>
-  <li className="list-group-item d-flex justify-content-between align-items-center">
-    A second list item
-    <span className="badge bg-info rounded-pill">2</span>
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="secondCheckboxStretched">Second checkbox</label>
   </li>
-  <li className="list-group-item d-flex justify-content-between align-items-center">
-    A third list item
-    <span className="badge bg-info  rounded-pill">1</span>
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="thirdCheckboxStretched">Third checkbox</label>
   </li>
 </ul>
-<button className='button-52'>
-Submit
-</button>
 </div>
   )
 }
