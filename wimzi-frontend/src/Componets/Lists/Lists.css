@@ -2,6 +2,10 @@
     max-width: 450px;
 }
 
+.list-group-item{
+  display: flex;
+  }
+
 .input-submit{
     display: flex;
     justify-content: space-between;
@@ -11,7 +15,7 @@
 }
 
 .form-control{
-    width: 380px;
+    width: 400px;
 }
 
 .button-52 {

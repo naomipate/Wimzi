@@ -8,5 +8,6 @@ async function getImageById(id) {
     return error;
   }
 }
+
 //Total amount of images: 123203
 export { getImageById };
