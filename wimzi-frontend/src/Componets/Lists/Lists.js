@@ -1,3 +1,4 @@
+
 import React from 'react'
 import "./Lists.css"; 
 
@@ -28,4 +29,4 @@ function Lists() {
   )
 }
 
-export default Lists
+export default Lists;
