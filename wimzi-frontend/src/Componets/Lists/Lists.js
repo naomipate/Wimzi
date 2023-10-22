@@ -1,84 +1,32 @@
-import React from "react";
-import SubLists from "./SubLists";
-import "./Lists.css";
+
+import React from 'react'
+import "./Lists.css"; 
 
 function Lists() {
   return (
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button bg-info"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            New Reminder
-          </button>
-        </h2>
-        <div
-          id="collapseOne"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <form className="input-submit">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <button type="submit" class="btn btn-info">
-                +
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
-          >
-            Accordion Item #2
-          </button>
-        </h2>
-        <div
-          id="collapseTwo"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <form className="input-submit">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <button type="submit" class="btn btn-info">
-                +
-              </button>
-            </form>
-
-            <SubLists />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    <div className='list-container'>
+            <form className='input-submit'>
+  <div className="mb-3">
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+  <button type="submit" className="btn btn-info">+</button>
+</form>
+<ul className="list-group">
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="firstCheckboxStretched">First checkbox</label>
+  </li>
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="secondCheckboxStretched">Second checkbox</label>
+  </li>
+  <li className="list-group-item">
+    <input className="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched"/>
+    <label className="form-check-label stretched-link" htmlFor="thirdCheckboxStretched">Third checkbox</label>
+  </li>
+</ul>
+</div>
+  )
 }
 
 export default Lists;

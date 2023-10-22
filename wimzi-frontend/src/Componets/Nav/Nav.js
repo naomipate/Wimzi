@@ -1,19 +1,18 @@
-import React from 'react'
-import "./Nav.css"; 
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Nav.css";
 
 function Nav() {
   return (
     <nav className="navbar bg-dark border-bottom border-body">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <NavLink className="navbar-brand" to={"/"}>
           Wimzi
-        </a>
-        <a className="navbar-brand" href="/about">
-          About
-        </a>
+        </NavLink>
+        <NavLink>About</NavLink>
       </div>
     </nav>
   );
 }
 
-export default Nav
+export default Nav;
