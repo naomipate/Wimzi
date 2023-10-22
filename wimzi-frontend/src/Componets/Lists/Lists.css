@@ -6,6 +6,24 @@
   display: flex;
   }
 
+.due-date{
+    /* display: block; */
+    font:
+      18px 'Fira Sans',
+      sans-serif;
+  }
+  
+.btn-edit{
+
+  margin-right: 10px;
+}
+.list-time{
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+  margin: 0px 20px 30px 0;
+  }
+
 .input-submit{
     display: flex;
     justify-content: space-between;

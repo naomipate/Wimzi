@@ -11,19 +11,24 @@ function Lists() {
   </div>
   <button type="submit" className="btn btn-info">+</button>
 </form>
+<div className='list-time'>
+<label className='due-date'>Due Date: </label>
+<input className='due-date-input' type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+</div>
+
 <ul className="list-group">
-  <li className="list-group-item">
+  <li className="list-group-item d-flex justify-content-between align-items-center">
+    <div>
     <input className="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched"/>
-    <label className="form-check-label stretched-link" htmlFor="firstCheckboxStretched">First checkbox</label>
+    <label className="form-check-label stretched-link" htmlFor="firstCheckboxStretched">First checkbox</label>  
+    </div>
+    <div className='list-danger-infor-btn'>
+    <button class="btn btn-info btn-edit">Edit</button>
+    <button class="btn btn-danger">Delete</button>
+    </div>
+
   </li>
-  <li className="list-group-item">
-    <input className="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched"/>
-    <label className="form-check-label stretched-link" htmlFor="secondCheckboxStretched">Second checkbox</label>
-  </li>
-  <li className="list-group-item">
-    <input className="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched"/>
-    <label className="form-check-label stretched-link" htmlFor="thirdCheckboxStretched">Third checkbox</label>
-  </li>
+
 </ul>
 </div>
   )
