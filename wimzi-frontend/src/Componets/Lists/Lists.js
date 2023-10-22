@@ -1,44 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Lists.css";
 import data from "../../data/data";
 
 function Lists() {
-  useEffect(() => {
-    handleDataStart();
-  }, []);
-  const [dataArr, setDataArr] = useState([]);
-  const [todo, setTodo] = useState({
-    item: null, // why null?
-    date: "",
-  });
-  async function handleOnSumbit(e) {
-    e.preventDefault();
-  }
-  async function handleDataStart() {
-    let sortedArr = data.sort((a, b) => {
-      return new Date(a.date) - new Date(b.date);
-    });
-    // console.log(sortedArr);
-    setDataArr(sortedArr);
+  const [dataArr, setDataArr] = useState(data);
+  const [name, setName] = useState("");
+
+  function handleUpdate() {
+    const todoObj = {
+      item: name,
+      date: new Date(),
+    };
+
+    if (todoObj.item) {
+      setDataArr([...dataArr, todoObj]);
+      setName("");
+    }
   }
 
-  async function handleUpdate() {}
+  const deleteItem = (e) => {
+    console.log(e.target.id);
+    setDataArr(dataArr.filter((item) => item.item !== e.target.id));
+  };
 
   return (
     <div className="list-container">
-      <form className="input-submit">
+      <div className="input-submit">
         <div className="mb-3">
           <input
-            type="email"
+            type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="item"
+            aria-describedby="todoInput"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-info">
+        <button className="btn btn-info" onClick={() => handleUpdate()}>
           +
         </button>
-      </form>
+      </div>
       <div className="list-time">
         <label className="due-date">Due Date: </label>
         <input
@@ -53,26 +54,37 @@ function Lists() {
       </div>
 
       <ul className="list-group">
-        <li className="list-group-item d-flex justify-content-between align-items-center">
-          <div>
-            <input
-              className="form-check-input me-1"
-              type="checkbox"
-              value=""
-              id="firstCheckboxStretched"
-            />
-            <label
-              className="form-check-label stretched-link"
-              htmlFor="firstCheckboxStretched"
+        {dataArr.map(({ item, date }, index) => {
+          return (
+            <li
+              className="list-group-item d-flex justify-content-between align-items-center"
+              key={index}
             >
-              First checkbox
-            </label>
-          </div>
-          <div className="list-danger-infor-btn">
-            <button class="btn btn-info btn-edit">Edit</button>
-            <button class="btn btn-danger">Delete</button>
-          </div>
-        </li>
+              <div>
+                <input
+                  className="form-check-input me-1"
+                  type="checkbox"
+                  value=""
+                  id="firstCheckboxStretched"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="firstCheckboxStretched"
+                >
+                  {`${new Date(date).getUTCMonth()} ${new Date(
+                    date
+                  ).getUTCDate()} ${new Date(date).getUTCFullYear()}: ${item}`}
+                </label>
+              </div>
+              <div className="list-danger-infor-btn">
+                <button class="btn btn-info btn-edit">Edit</button>
+                <button id={item} class="btn btn-danger" onClick={deleteItem}>
+                  Delete
+                </button>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
