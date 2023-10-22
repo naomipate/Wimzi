@@ -1,5 +1,9 @@
 .list-container{
     max-width: 450px;
+    background: white;
+    padding: 16px;
+    border-radius: 5px;
+    align-self: flex-start;
 }
 
 .list-group-item{
@@ -27,7 +31,17 @@
 .input-submit{
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
+
+.input-submit .form-control {
+  width: 100%;
+}
+
+.input-submit > div {
+  flex: 1;
+}
+
 .btn-info{
     height: 40px;
 }
