@@ -9,7 +9,7 @@ function Nav() {
         <NavLink className="navbar-brand" to={"/"}>
           Wimzi
         </NavLink>
-        <NavLink>About</NavLink>
+        <NavLink style={{textDecoration: "none"}}>About</NavLink>
       </div>
     </nav>
   );
