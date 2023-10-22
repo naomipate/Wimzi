@@ -33,15 +33,16 @@ INSERT INTO users (username, email, user_password) VALUES
 
 DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks(
-    id SERIAL PRIMARY KEY NOT NULL, 
+    id SERIAL PRIMARY KEY NOT NULL,
+    task_date_time DATETIME,
     task_title TEXT NOT NULL,
     task_list_description TEXT
 );
-INSERT INTO tasks (task_title, task_list_description) VALUES
-('Art Class', 'watercolor brushes with a slanted end for additional painting purposes.'),
-('Art Practice', 'watercolor pencils to enhance shapes in the paint.'),
-('Moms Birthday', 'acrylic paint for college course.'),
-('Texture Studies', 'acrylic painting with a palette knife for textures.');
+INSERT INTO tasks (task_date, task_title, task_list_description) VALUES
+('2023-10-25 12:00:00', 'Art Class', 'watercolor brushes with a slanted end for additional painting purposes.'),
+('2023-10-25 14:30:00', 'Art Practice', 'watercolor pencils to enhance shapes in the paint.'),
+('2023-10-29 17:00:00', 'Moms Birthday', 'what does mom want?'),
+('2023-10-27 11:15:00', 'Texture Studies', 'acrylic painting with a palette knife for textures.');
 
 DROP TABLE IF EXISTS subtasks;
 CREATE TABLE subtasks(
@@ -52,6 +53,6 @@ CREATE TABLE subtasks(
 );
 INSERT INTO subtasks (task_id, subtask_title, subtask_description) VALUES
 (1, 'Watercolor brushes', 'watercolor brushes with a slanted end for additional painting purposes.'),
-(2, 'Watercolor pencils', 'watercolor pencils to enhance shapes in the paint.'),
-(3, 'Acrylic paint', 'acrylic paint for college course.'),
+(1, 'Watercolor pencils', 'watercolor pencils to enhance shapes in the paint.'),
+(2, 'Acrylic paint', 'acrylic paint for college course.'),
 (4, 'Palette knife', 'acrylic painting with a palette knife for textures.');
