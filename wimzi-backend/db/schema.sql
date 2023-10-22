@@ -10,7 +10,7 @@ CREATE TABLE users(
     user_password TEXT
 );
 
-INSERT INTO users (username, email, profile_img) VALUES
+INSERT INTO users (username, email, user_password) VALUES
 ('SysGrlNaomi', 'sysgrlnaomi@email.com', 'postgreSQL'),
 ('BeardMan', 'cooldude@email.com', 'dollarshaveclub'),
 ('Lily Brown', 'lilybrown@email.com', 'artacorn'),
@@ -34,23 +34,24 @@ INSERT INTO users (username, email, profile_img) VALUES
 DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks(
     id SERIAL PRIMARY KEY NOT NULL, 
-    subtask TEXT NOT NULL, 
-    subtask_description TEXT
+    task_title TEXT NOT NULL,
+    task_list_description TEXT
 );
-INSERT INTO tasks (subtask, subtask_description) VALUES
-('Watercolor brushes', 'watercolor brushes with a slanted end for additional painting purposes.'),
-('Watercolor pencils', 'watercolor pencils to enhance shapes in the paint.'),
-('Acrylic paint', 'acrylic paint for college course.'),
-('Palette knife', 'acrylic painting with a palette knife for textures.');
+INSERT INTO tasks (task_title, task_list_description) VALUES
+('Art Class', 'watercolor brushes with a slanted end for additional painting purposes.'),
+('Art Practice', 'watercolor pencils to enhance shapes in the paint.'),
+('Moms Birthday', 'acrylic paint for college course.'),
+('Texture Studies', 'acrylic painting with a palette knife for textures.');
 
 DROP TABLE IF EXISTS subtasks;
 CREATE TABLE subtasks(
     id SERIAL PRIMARY KEY NOT NULL, 
-    subtask TEXT NOT NULL, 
+    task_id INTEGER REFERENCES tasks(id), 
+    subtask_title TEXT,
     subtask_description TEXT
 );
-INSERT INTO tasks (subtask, subtask_description) VALUES
-('Watercolor brushes', 'watercolor brushes with a slanted end for additional painting purposes.'),
-('Watercolor pencils', 'watercolor pencils to enhance shapes in the paint.'),
-('Acrylic paint', 'acrylic paint for college course.'),
-('Palette knife', 'acrylic painting with a palette knife for textures.');
+INSERT INTO subtasks (task_id, subtask_title, subtask_description) VALUES
+(1, 'Watercolor brushes', 'watercolor brushes with a slanted end for additional painting purposes.'),
+(2, 'Watercolor pencils', 'watercolor pencils to enhance shapes in the paint.'),
+(3, 'Acrylic paint', 'acrylic paint for college course.'),
+(4, 'Palette knife', 'acrylic painting with a palette knife for textures.');
