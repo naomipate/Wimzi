@@ -2,6 +2,18 @@
     max-width: 450px;
 }
 
+.input-submit{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-info{
+    height: 40px;
+}
+
+.form-control{
+    width: 380px;
+}
+
 .button-52 {
   font-size: 16px;
   font-weight: 200;
